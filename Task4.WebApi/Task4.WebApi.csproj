@@ -7,13 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Client\**" />
-    <Content Remove="Client\**" />
-    <EmbeddedResource Remove="Client\**" />
-    <None Remove="Client\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
@@ -23,6 +16,35 @@
   <ItemGroup>
     <ProjectReference Include="..\Task4.Application\Task4.Application.csproj" />
     <ProjectReference Include="..\Task4.Persistence\Task4.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\.env" />
+    <None Include="wwwroot\.gitignore" />
+    <None Include="wwwroot\public\index.html" />
+    <None Include="wwwroot\README.md" />
+    <None Include="wwwroot\src\api\index.js" />
+    <None Include="wwwroot\src\api\userApi.js" />
+    <None Include="wwwroot\src\App.js" />
+    <None Include="wwwroot\src\assets\logo.png" />
+    <None Include="wwwroot\src\assets\svg\person-lock.svg" />
+    <None Include="wwwroot\src\assets\svg\trash.svg" />
+    <None Include="wwwroot\src\assets\svg\unlock.svg" />
+    <None Include="wwwroot\src\components\AppRouter.js" />
+    <None Include="wwwroot\src\components\NavBar.js" />
+    <None Include="wwwroot\src\index.js" />
+    <None Include="wwwroot\src\pages\Login.js" />
+    <None Include="wwwroot\src\pages\Users.js" />
+    <None Include="wwwroot\src\routes.js" />
+    <None Include="wwwroot\src\sass\styles.scss" />
+    <None Include="wwwroot\src\service\UserState.js" />
+    <None Include="wwwroot\src\utils\consts.js" />
+    <None Include="wwwroot\src\utils\dataFormat.js" />
+    <None Include="wwwroot\src\utils\validateParams.js" />
   </ItemGroup>
 
 </Project>

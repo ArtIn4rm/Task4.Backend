@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Diagnostics;
 
 namespace Task4.WebApi
 {
@@ -44,10 +45,6 @@ namespace Task4.WebApi
 
         public static void ConfigureApplicationPipeline(WebApplication app)
         {
-            if(Environment!.IsDevelopment())
-            {
-                //app.UseDeveloperExceptionPage();
-            }
 
             app.UseExceptionHandling();
             app.UseRouting();
@@ -81,6 +78,23 @@ namespace Task4.WebApi
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["SecretKey"]!)),
                 ValidateIssuerSigningKey = true,
             };
+        }
+
+        public static void RunReact()
+        {
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = false;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine("cd wwwroot");
+            cmd.StandardInput.WriteLine("npm start");
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
         }
     }
 }

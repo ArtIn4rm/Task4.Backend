@@ -1,0 +1,42 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.svg{
+    width: 25px;
+    margin-top: 7px;
+}
+
+.svg_div{
+    height: 41px;
+    width: 134px;
+    position: relative;
+}
+
+.svg_div:hover{
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(22deg) brightness(107%) contrast(101%);
+}
+
+.pick_all{
+    transform : scale(1.5);
+    padding-left: 28px;
+    margin-top: 1px;
+}
+
+.align_th{
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.id_th{
+    width: 190px;
+}
+
+.check_th{
+    transform : scale(1.5);
+    margin-top: 12px;
+}
+
+.crd{
+    position: absolute;
+    margin-top: 116px;
+}
