@@ -21,8 +21,8 @@ namespace Task4.Application.CQRS.RegisteredUsers.Commands.CreateRegisteredUser
                 Name = request.Name,
                 Email = request.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
-                RegistrationDate = DateTime.Now,
-                LastAuthorizationDate = DateTime.Now,
+                RegistrationDate = DateTime.Now.ToUniversalTime(),
+                LastAuthorizationDate = DateTime.Now.ToUniversalTime(),
                 Status = UserStatus.Active,
             };
             var similar = await _dbContext.RegisteredUsers

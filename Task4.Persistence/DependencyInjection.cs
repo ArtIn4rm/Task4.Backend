@@ -13,7 +13,7 @@ namespace Task4.Persistence
             var connectionString = configuration["DbConnection"];
             services.AddDbContext<RegisteredUserDbContext>(options =>
             {
-                options.UseSqlServer(connectionString);
+                options.UseNpgsql(connectionString);
             });
             services.AddScoped<IRegisteredUserDbContext>(provider =>
                 provider.GetService<RegisteredUserDbContext>()!);

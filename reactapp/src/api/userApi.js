@@ -1,5 +1,8 @@
 import {$auth, $host} from './index'
 import jwt_decode from 'jwt-decode'
+import React, { useContext } from 'react'
+import { Context } from '../index'
+
 
 export const login = async (email, password) => {
     return await $host.put('/api/login', {Email: email, Password: password})
@@ -47,7 +50,12 @@ export const fetchUsers = async () => {
 
 const handle = (error) => {
     if (error.response) {
-      alert(error.response.status + " : " + error.response.data.error)
+        if (error.response.status == 401) {
+            localStorage.removeItem('token')
+            document.location.reload();
+        } else {
+            alert(error.response.status + " : " + error.response.data.error)
+        }
     } else {
       console.log('Error', error.message);
     }

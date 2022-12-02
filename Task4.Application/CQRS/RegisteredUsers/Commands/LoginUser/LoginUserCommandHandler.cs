@@ -33,7 +33,7 @@ namespace Task4.Application.CQRS.RegisteredUsers.Commands.LoginUser
                 throw new UserIsBlockedException(regitesteredUser.Name!);
             }
 
-            regitesteredUser.LastAuthorizationDate = DateTime.Now;
+            regitesteredUser.LastAuthorizationDate = DateTime.Now.ToUniversalTime();
             await _dbContext.SaveChangesAsync(cancellationToken);
             return regitesteredUser.Id;
         }
