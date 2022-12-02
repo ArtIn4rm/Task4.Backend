@@ -89,7 +89,7 @@ namespace Task4.WebApi
             cmd.StartInfo.CreateNoWindow = false;
             cmd.StartInfo.UseShellExecute = false;
             cmd.Start();
-
+            
             cmd.StandardInput.WriteLine("cd wwwroot");
             cmd.StandardInput.WriteLine("npm start");
             cmd.StandardInput.Flush();

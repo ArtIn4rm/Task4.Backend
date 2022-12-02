@@ -5,7 +5,6 @@ using Task4.Application.CQRS.RegisteredUsers.Queries.CheckUserAuth;
 using MediatR;
 using Task4.WebApi;
 using Task4.WebApi.Models;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Task4.WebApi.Middleware
 {
